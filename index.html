@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Acessível</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinos">Destinos</a></li>
+            <li><a href="#pacotes">Pacotes</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+
+
+        <section class="buttons">
+            <button class="btn btn-dark" id="increase-font">Aumentar Fonte</button>
+            <button class="btn btn-dark" id="decrease-font">Diminuir Fonte</button>
+
+            <button class="btn btn-light" id="lightButton">Modo Claro</button>
+            <button class="btn btn-dark" id="darkButton">Modo Escuro</button>
+
+        </section>
+
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Bem-vindo</h2>
+            <p>Explore nosso site e descubra os melhores destinos de viagem. Oferecemos pacotes especiais para que
+                sua experiência seja inesquecível.</p>
+        </section>
+        <section id="destinos">
+            <h2>Destinos</h2>
+            <p>Conheça os destinos mais exóticos e encantadores ao redor do mundo. Desde praias paradisíacas até
+                cidades vibrantes, temos o destino perfeito para você.</p>
+        </section>
+        <section id="pacotes">
+            <h2>Pacotes</h2>
+            <p>Escolha entre uma variedade de pacotes de viagem personalizados. Temos opções para todos os gostos e
+                orçamentos, com ofertas especiais para tornar sua viagem ainda mais incrível.</p>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco para obter mais informações sobre nossos serviços e pacotes de viagem.
+                Estamos aqui para ajudar a planejar sua próxima aventura.</p>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <h6>&copy;2024 - Eric Alvarenga</h6>
+    </footer>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+        document.addEventListener('DOMContentLoaded', function () {
+            const increaseButton = document.getElementById('increase-font');
+            const decreaseButton = document.getElementById('decrease-font');
+            const content = document.body;
+
+            let fontSize = 16; // Tamanho de fonte inicial em pixels
+
+            increaseButton.addEventListener('click', function () {
+                fontSize += 2;
+                content.style.fontSize = fontSize + 'px';
+            });
+
+            decreaseButton.addEventListener('click', function () {
+                fontSize -= 2;
+                content.style.fontSize = fontSize + 'px';
+            });
+        });
+
+        document.getElementById('lightButton').addEventListener('click', () => { document.body.classList.remove('dark-mode'); }); document.getElementById('darkButton').addEventListener('click', () => { document.body.classList.add('dark-mode'); });
+    </script>
+</body>
+
+</html>
